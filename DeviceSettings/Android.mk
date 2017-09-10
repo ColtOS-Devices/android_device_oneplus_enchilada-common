@@ -32,8 +32,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.preference_preference
 
 LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/res \
-    $(TOP)/packages/resources/devicesettings/res
+    $(LOCAL_PATH)/res
 
 package_resource_overlays := $(strip \
     $(wildcard $(foreach dir, $(PRODUCT_PACKAGE_OVERLAYS), \
