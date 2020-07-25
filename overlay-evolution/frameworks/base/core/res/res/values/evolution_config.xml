@@ -54,6 +54,9 @@
     <!-- Default state for LiveDisplay -->
     <bool name="config_liveDisplayAvailable">true</bool>
 
+    <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
     <!-- System Info -->
     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone4/temp</string>
     <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
