@@ -86,6 +86,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     libcvface_api \
+    libqti-perfd-client \
     Snap
 
 # Common init scripts
