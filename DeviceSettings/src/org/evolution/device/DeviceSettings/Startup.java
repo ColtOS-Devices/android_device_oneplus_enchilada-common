@@ -72,6 +72,7 @@ public class Startup extends BroadcastReceiver {
             context.startService(new Intent(context, FPSInfoService.class));
        }
 
+        org.evolution.device.DeviceSettings.doze.Utils.checkDozeService(context);
         Utils.enableService(context);
     }
 

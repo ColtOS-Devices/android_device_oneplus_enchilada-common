@@ -46,10 +46,11 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import org.evolution.device.DeviceSettings.FileUtils;
+import org.evolution.device.DeviceSettings.doze.DozeSettingsActivity;
 import org.evolution.device.DeviceSettings.preferences.ProperSeekBarPreference;
-import org.evolution.device.DeviceSettings.preferences.VibratorStrengthPreference;
-import org.evolution.device.DeviceSettings.preferences.VibratorNotifStrengthPreference;
 import org.evolution.device.DeviceSettings.preferences.VibratorCallStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorNotifStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorStrengthPreference;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -70,6 +71,7 @@ public class DeviceSettings extends PreferenceFragment
     private VibratorCallStrengthPreference mVibratorCallStrength;
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
+    private static final String PREF_DOZE = "advanced_doze_settings";
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -78,6 +80,7 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
     private static SwitchPreference mFpsInfo;
+    private Preference mDozeSettings;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -132,6 +135,14 @@ public class DeviceSettings extends PreferenceFragment
         mFpsInfo = (SwitchPreference) findPreference(KEY_FPS_INFO);
         mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
         mFpsInfo.setOnPreferenceChangeListener(this);
+
+        mDozeSettings = (Preference)findPreference(PREF_DOZE);
+        mDozeSettings.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), DozeSettingsActivity.class);
+            startActivity(intent);
+            return true;
+        });
+
     }
 
     @Override
