@@ -25,6 +25,10 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
 
+import org.evolution.device.DeviceSettings.preferences.VibratorCallStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorNotifStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorStrengthPreference;
+
 public class Startup extends BroadcastReceiver {
 
     private boolean mHBM = false;

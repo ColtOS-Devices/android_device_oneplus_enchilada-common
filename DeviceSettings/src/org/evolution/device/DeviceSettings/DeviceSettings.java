@@ -46,6 +46,10 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import org.evolution.device.DeviceSettings.FileUtils;
+import org.evolution.device.DeviceSettings.preferences.ProperSeekBarPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorNotifStrengthPreference;
+import org.evolution.device.DeviceSettings.preferences.VibratorCallStrengthPreference;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
