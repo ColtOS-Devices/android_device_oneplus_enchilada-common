@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Signapk
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
