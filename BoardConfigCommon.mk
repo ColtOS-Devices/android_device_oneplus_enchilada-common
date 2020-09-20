@@ -127,7 +127,8 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/generic/private \
