@@ -72,6 +72,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
     private static final String PREF_DOZE = "advanced_doze_settings";
+    public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
