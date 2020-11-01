@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
     vendor.oneplus.camera.CameraHIDL-V1.0-java
 
+# Component overrides
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bluetooth/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.devicesettings.rc \
