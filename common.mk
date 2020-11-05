@@ -121,7 +121,7 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder.vendor \
-    libhwbinder 
+    libhwbinder
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -179,7 +179,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    device/oneplus/common \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 
 # Signapk
 PRODUCT_HOST_PACKAGES += \
