@@ -169,6 +169,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += oneplus-mock
 PRODUCT_BOOT_JARS += oneplus-mock
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk.oneplus_sdm845
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk.oneplus_sdm845
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom:64
