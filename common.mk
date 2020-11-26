@@ -88,7 +88,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    GoogleCamera \
+    Googlecamera \
     libcvface_api \
     libqti-perfd-client
 

@@ -1,9 +1,9 @@
 LOCAL_PATH := $(call my-dir)
 
-#GoogleCamera
+#Googlcamera
 include $(CLEAR_VARS)
-LOCAL_MODULE := GoogleCamera
-LOCAL_SRC_FILES := priv-app/GoogleCamera/GoogleCamera.apk
+LOCAL_MODULE := Googlecamera
+LOCAL_SRC_FILES := priv-app/Googlecamera/Googlecamera.apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Snap Camera2
