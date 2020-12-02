@@ -122,7 +122,7 @@ public class DeviceSettings extends PreferenceFragment
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
+        mHBMModeSwitch.setOnPreferenceChangeListener(this);
 
         mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
@@ -147,6 +147,12 @@ public class DeviceSettings extends PreferenceFragment
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mFpsInfo) {
             boolean enabled = (Boolean) newValue;
@@ -161,6 +167,16 @@ public class DeviceSettings extends PreferenceFragment
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
             Utils.enableService(getContext());
+        } else if (preference == mHBMModeSwitch) {
+            Boolean enabled = (Boolean) newValue;
+            Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "1" : "0");
+            Intent hbmIntent = new Intent(this.getContext(),
+                    org.evolution.device.DeviceSettings.HBMModeService.class);
+            if (enabled) {
+                this.getContext().startService(hbmIntent);
+            } else {
+                this.getContext().stopService(hbmIntent);
+            }
         } else {
             Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
         }

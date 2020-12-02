@@ -156,6 +156,9 @@
                  android:permission="OneplusDozeService">
         </service>
 
+        <service android:name="org.evolution.device.DeviceSettings.HBMModeService"
+            android:exported="false" />
+
         <!-- Search Provider -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
