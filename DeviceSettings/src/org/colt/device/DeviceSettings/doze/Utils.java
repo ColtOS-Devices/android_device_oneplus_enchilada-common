@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.evolution.device.DeviceSettings.doze;
+package org.colt.device.DeviceSettings.doze;
 
 import android.content.Context;
 import android.content.Intent;
