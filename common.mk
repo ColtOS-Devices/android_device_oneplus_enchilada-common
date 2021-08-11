@@ -105,6 +105,10 @@ PRODUCT_PACKAGES += \
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+	
+#GCam Permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/permissions/privapp-permissions-googlecamera.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-googlecamera.xml
 
 # Common init scripts
 PRODUCT_PACKAGES += \
